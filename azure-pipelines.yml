@@ -15,19 +15,17 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: 
+    checkLatest: true
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
     
-- task: Npm@1
-  inputs:
-        command: 'install'
-  
-- task: NodeTool@0
-  inputs:
-    versionSpec: '6.x'
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
