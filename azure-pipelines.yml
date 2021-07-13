@@ -24,12 +24,10 @@ steps:
 - task: Npm@1
   inputs:
         command: 'install'
-
-- task: VSBuild@1
+  
+- task: NodeTool@0
   inputs:
-            solution: '**\*.sln'
-            vsVersion: '16.0'
-
+    versionSpec: '6.x'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
