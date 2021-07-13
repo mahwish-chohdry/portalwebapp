@@ -17,7 +17,7 @@ variables:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '14.17.3'
+    versionSpec: '14.x'
     checkLatest: true
 - task: NuGetToolInstaller@1
 
